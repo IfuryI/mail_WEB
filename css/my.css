@@ -1,0 +1,114 @@
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+main > .container {
+  padding: 60px 15px 0;
+}
+
+.footer {
+  background-color: #f5f5f5;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+.question-box {
+	margin-top: 20px;
+    border: 1px solid grey;
+    border-radius: 13px;
+    padding: 20px;
+}
+
+.question-img {
+	max-width: 170PX;
+}
+
+
+
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.top_question {
+    margin-bottom: 30px;
+
+}
+
+.top_header {
+    margin-right: 0px;
+}
+
+.question-link {
+    font-size: 20px;
+}
+
+.hot-question-link {
+    font-size: 25px;
+}
+
+.page-head {
+    background-color: #E0E0F8;
+    height: 70px;
+}
+
+h1, h2, h3 {
+    font-family: 'Lobster', cursive;
+}
+
+.my-header {
+    margin-bottom: 20px;
+}
+
+.tags {
+
+}
+
+.best-users {
+
+}
+
+
+.like {
+    height: 28px;
+    width: 28px;
+}
+
+.question {
+    height: 165px;
+}
+
+.one-question {
+    height: 220px;
+}
+.answer{
+    height: 165px;
+}
+.img-avatar {
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.img-avatar-header {
+    border: 0;
+    outline: none;
+
+}
+
+.img-navbar {
+    margin-right: -22px;
+    padding: 1px;
+}
+
+.pad{
+  margin: 15px;
+}
+

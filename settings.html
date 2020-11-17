@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en" class="h-100">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Jekyll v4.1.1">
+        <title>ASK</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/my.css" rel="stylesheet">
+    </head>
+    <body class="d-flex flex-column h-100">
+        <header>
+            <!-- Fixed navbar -->
+            <nav class="row border-bottom shadow-sm mb-2 p-3 justify-content-center navbar navbar-dark bg-dark">
+                
+                <div class="col-1 mr-4">
+                    <h2 class="my-0 font-weight-bold">Ask.me</h2>
+                </div>
+                <div class="col-4">
+                    <form class="form-inline justify-content-center ">
+                        <input class="form-control mr-sm-2 flex-fill" type="search" placeholder="Введите запрос" aria-label="Введите запрос">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+                    </form>
+                </div>
+                <div class="col-2 d-flex ">
+                    <a class="btn btn-outline-info flex-fill" href="#">Задать вопрос</a>
+                </div>
+                <div class="col-md-3 p-2 d-flex justify-content-center">
+                    <div class="col-3 img-navbar">
+                        
+                        <img src="img/anon.png" width="55" height="55" class="img-avatar-header flex-fill"/>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <span style="margin-left:10px">   User Name </span>
+                        </div>
+                        <div class="row">
+                            <a class="btn btn-link" href="#">Settings</a>
+                            
+                            <a class="btn btn-link" href="#">Log out</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- Begin page content -->
+        <main role="main" class="d-flex">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="top_header col-md-8 col-centered border-bottom shadow-sm top_question">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h2 class="col">Настройки: Ilya</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" role="navigation">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-9 pr-5 mt-2">
+                        <form>
+                            <div class="form-group">
+                                <label for="login">Логин</label>
+                                <input type="text" class="form-control" id="login" placeholder="Ilya">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" class="form-control" id="email" placeholder="Ilya@gmail.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="nickname">Никнейм</label>
+                                <input type="text" class="form-control" id="nickname" placeholder="Ilya">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Пароль</label>
+                                <input type="password" class="form-control" id="password">
+                            </div>
+                            <div class="form-group">
+                                <label for="password_rep">Повторите пароль</label>
+                                <input type="password" class="form-control" id="password_rep">
+                            </div>
+                            <div>
+                                <p>Ваш аватар</p>
+                                <div class="col-12 pl-4 pb-3">
+                                    <img src="img/anon.png" class="img-avatar"/>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="btn btn-link">
+                                    Загрузить аватар
+                                    <input type="file" style="display: none;">
+                                </label>
+                            </div>
+                        </form>
+                        <a href="/questions/ask" class="btn btn-outline-primary">Сохранить</a>
+                    </div>
+                    <div class="col-3">
+                        <h2>Популярные теги</h2>
+                        <div class="row mb-5">
+                            <div class=" col-md-3">
+                                <a href="#" class="tags">MySQL</a>
+                            </div>
+                            <div class=" col-md-3">
+                                <a href="#" class="tags">Python</a>
+                            </div>
+                            <div class=" col-md-3">
+                                <a href="#" class="tags">Technopark</a>
+                            </div>
+                        </div>
+                        <h2>Лучшие пользователи</h2>
+                        <div class="row ">
+                            <div class=" col-md-6">
+                                <a href="#" class="best-users">Bob</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-6">
+                                <a href="#" class="best-users">John</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="#" class="best-users">Ilya</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-6">
+                                <a href="#" class="best-users">Lol</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer mt-auto py-3">
+            <div class="container">
+                <span class="text-muted">Place sticky footer content here.</span>
+            </div>
+        </footer>
+        
+        <script src="js/jquery.slim.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/popper.min.js"></script>
+    </body>
+</html>
