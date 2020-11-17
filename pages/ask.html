@@ -7,18 +7,18 @@
         <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
         <meta name="generator" content="Jekyll v4.1.1">
         <title>ASK</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/my.css" rel="stylesheet">
+        <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../static/css/my.css" rel="stylesheet">
     </head>
     <body class="d-flex flex-column h-100">
         <header>
             <!-- Fixed navbar -->
-            <nav class="row border-bottom shadow-sm mb-2 p-3 justify-content-center navbar navbar-dark bg-dark">
+            <nav class="row border-bottom shadow-sm mb-2 p-2 justify-content-center navbar navbar-dark bg-dark">
                 
                 <div class="col-1 mr-4">
                     <h2 class="my-0 font-weight-bold">Ask.me</h2>
                 </div>
-                <div class="col-4">
+                <div class="col-6">
                     <form class="form-inline justify-content-center ">
                         <input class="form-control mr-sm-2 flex-fill" type="search" placeholder="Введите запрос" aria-label="Введите запрос">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
@@ -27,77 +27,48 @@
                 <div class="col-2 d-flex ">
                     <a class="btn btn-outline-info flex-fill" href="#">Задать вопрос</a>
                 </div>
-                <div class="col-md-3 p-2 d-flex justify-content-center">
-                    <div class="col-3 img-navbar">
-                        
-                        <img src="img/anon.png" width="55" height="55" class="img-avatar-header flex-fill"/>
-                    </div>
-                    <div class="col">
-                        <div class="row">
-                            <span style="margin-left:10px">   User Name </span>
-                        </div>
-                        <div class="row">
-                            <a class="btn btn-link" href="#">Settings</a>
-                            
-                            <a class="btn btn-link" href="#">Log out</a>
-                        </div>
-                    </div>
+                <div class="col-2 col-md-2 d-flex justify-content-center">
+                    <a class="btn btn-outline-info m-1 flex-fill" href="#">Вход</a>
+                    <a class="ml-0 btn btn-outline-primary m-1 flex-fill" href="#">Регистрация</a>
                 </div>
             </nav>
         </header>
         <!-- Begin page content -->
         <main role="main" class="d-flex">
             <div class="container">
-                <div class="row justify-content-center">
+
+                <div class="row justify-content-center md-3">
                     <div class="top_header col-md-8 col-centered border-bottom shadow-sm top_question">
                         <div class="row">
                             <div class="col-md-8">
-                                <h2 class="col">Настройки: Ilya</h2>
+                                <h2 class="col">Новый вопрос</h2>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4" role="navigation">
                     </div>
                 </div>
+
                 <div class="row">
-                    <div class="col-9 pr-5 mt-2">
+                    <div class="col-md-8">
                         <form>
                             <div class="form-group">
-                                <label for="login">Логин</label>
-                                <input type="text" class="form-control" id="login" placeholder="Ilya">
+                                <label for="title">Заголовок</label>
+                                <input type="text" class="form-control" id="title" placeholder="How to build a moon park?">
                             </div>
                             <div class="form-group">
-                                <label for="email">E-mail</label>
-                                <input type="email" class="form-control" id="email" placeholder="Ilya@gmail.com">
+                                <label for="exampleFormControlTextarea1">Текст</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                placeholder="Hello"></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="nickname">Никнейм</label>
-                                <input type="text" class="form-control" id="nickname" placeholder="Ilya">
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Пароль</label>
-                                <input type="password" class="form-control" id="password">
-                            </div>
-                            <div class="form-group">
-                                <label for="password_rep">Повторите пароль</label>
-                                <input type="password" class="form-control" id="password_rep">
-                            </div>
-                            <div>
-                                <p>Ваш аватар</p>
-                                <div class="col-12 pl-4 pb-3">
-                                    <img src="img/anon.png" class="img-avatar"/>
-                                </div>
-                            </div>
-                            <div>
-                                <label class="btn btn-link">
-                                    Загрузить аватар
-                                    <input type="file" style="display: none;">
-                                </label>
+                                <label for="tags">Теги</label>
+                                <input type="text" class="form-control" id="tags" placeholder="moon, park, puzzle">
                             </div>
                         </form>
-                        <a href="/questions/ask" class="btn btn-outline-primary">Сохранить</a>
+                        <a href="/questions/ask" class="btn btn-outline-primary">Задать вопрос</a>
                     </div>
-                    <div class="col-3">
+                    <div class="col-3 ml-5">
                         <h2>Популярные теги</h2>
                         <div class="row mb-5">
                             <div class=" col-md-3">
@@ -141,8 +112,8 @@
             </div>
         </footer>
         
-        <script src="js/jquery.slim.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/popper.min.js"></script>
+        <script src="../static/js/jquery.slim.min.js"></script>
+        <script src="../static/js/bootstrap.min.js"></script>
+        <script src="../static/js/popper.min.js"></script>
     </body>
 </html>
