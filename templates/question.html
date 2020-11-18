@@ -1,0 +1,70 @@
+{% extends 'inc/base.html' %}
+
+{% load static %}
+
+{% block navbar %}
+    {% include 'inc/navbar.html' %}
+{% endblock navbar %}
+
+{% block mylegend %}
+    <div class="col-md-8">
+        <h2 class="col">Вопрос # {{ question.id }}</h2>
+    </div>
+{% endblock mylegend %}
+
+{% block content %}
+    <div class="one-question row border-bottom shadow-sm mb-4">
+        <div class="col-2">
+            <div class="row">
+                <div class="col-12 pt-4 pl-4">
+                    <img src="{% static 'img/anon.png' %}" class="img-avatar"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 pl-3">
+                    <a class="like btn btn-outline-primary btn-sm" href="#">+</a>
+                    <span style="white-space: pre-line"> {{ question.like_count }} </span>
+                    <a class="like btn btn-outline-primary btn-sm" href="#">-</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-8 mt-2">
+            <div class="row">
+                <div class="col">
+                    <a href="#" class="question-link">{{ question.title }}</a>
+                    <p style="white-space: pre-line">{{ question.text }}</p>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-6">
+                    <a href="#">answers({{ question.answer_count }})</a>
+                </div>
+                <div class="col-6">
+                    <span style="white-space: pre-line"> Tags: </span>
+                    {% for tag in question.tags %}
+                        <a href="#" class="tags">tag</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% for answer in blocks %}
+        {% include 'inc/answer.html' %}
+    {% endfor %}
+    
+    <div class="col-md-8">
+        <form>
+            <div class="form-group">
+                <label for="answer">Ваш ответ</label>
+                <textarea class="form-control" id="answer" rows="3"
+                placeholder="Enter your answer"></textarea>
+            </div>
+        </form>
+        <a href="/questions/ask" class="btn btn-outline-primary">Ответить</a>
+    </div>
+{% endblock content %}
+
+{% block pagination %}
+    {% include 'inc/paginator.html' %}
+{% endblock pagination %}

@@ -1,0 +1,87 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="h-100">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>ASK</title>
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/my.css' %}" rel="stylesheet">
+    </head>
+    <body class="d-flex flex-column h-100">
+        {% block navbar %}
+        {% endblock navbar %}
+        <main role="main" class="d-flex">
+            <div class="container">
+                <div class="row">
+                    <div class="top_header col-md-8 col-centered border-bottom shadow-sm top_question">
+                        <div class="row">
+                            {% block mylegend %}
+                            {% endblock mylegend %}
+                        </div>
+                    </div>
+                    <div class="col-md-4" role="navigation">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-9 pr-5 mt-2">
+                        {% block content %}
+                        {% endblock content %}
+                    </div>
+                    <div class="col-3">
+                        {% block right_menu %}
+                            <h2>Популярные теги</h2>
+                            <div class="row mb-5">
+                                <div class=" col-md-3">
+                                    <a href="#" class="tags">MySQL</a>
+                                </div>
+                                <div class=" col-md-3">
+                                    <a href="#" class="tags">Python</a>
+                                </div>
+                                <div class=" col-md-3">
+                                    <a href="#" class="tags">Technopark</a>
+                                </div>
+                            </div>
+                            <h2>Лучшие пользователи</h2>
+                            <div class="row ">
+                                <div class=" col-md-6">
+                                    <a href="#" class="best-users">Bob</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class=" col-md-6">
+                                    <a href="#" class="best-users">John</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a href="#" class="best-users">Ilya</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class=" col-md-6">
+                                    <a href="#" class="best-users">Lol</a>
+                                </div>
+                            </div>
+                        {% endblock right_menu %}
+                        
+                    </div>
+                </div>
+                {% block pagination %}
+
+                {% endblock pagination %}
+            </div>
+        </main>
+        <footer class="footer mt-auto py-3">
+            {% block myfooter %}
+                <div class="container d-flex justify-content-center">
+                    <span class="text-muted">Афимин Илья АПО-13</span>
+                </div>
+            {% endblock myfooter %}
+        </footer>
+        
+        <script src="../static/js/jquery.slim.min.js"></script>
+        <script src="../static/js/bootstrap.min.js"></script>
+        <script src="../static/js/popper.min.js"></script>
+    </body>
+</html>

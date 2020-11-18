@@ -1,0 +1,51 @@
+{% extends 'inc/base.html' %}
+
+{% load static %}
+
+{% block navbar %}
+    {% include 'inc/navbar_auth.html' %}
+{% endblock navbar %}
+
+{% block mylegend %}
+    <div class="col-md-8">
+        <h2 class="col">Настройки Ilya</h2>
+    </div>
+{% endblock mylegend %}
+
+{% block content %}
+    <form>
+        <div class="form-group">
+            <label for="login">Логин</label>
+            <input type="text" class="form-control" id="login" placeholder="Ilya">
+        </div>
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" class="form-control" id="email" placeholder="Ilya@gmail.com">
+        </div>
+        <div class="form-group">
+            <label for="nickname">Никнейм</label>
+            <input type="text" class="form-control" id="nickname" placeholder="Ilya">
+        </div>
+        <div class="form-group">
+            <label for="password">Пароль</label>
+            <input type="password" class="form-control" id="password">
+        </div>
+        <div class="form-group">
+            <label for="password_rep">Повторите пароль</label>
+            <input type="password" class="form-control" id="password_rep">
+        </div>
+        <div>
+            <p>Ваш аватар</p>
+            <div class="col-12 pl-4 pb-3">
+                <img src="../static/img/anon.png" class="img-avatar"/>
+            </div>
+        </div>
+        <div>
+            <label class="btn btn-link">
+                Загрузить аватар
+                <input type="file" style="display: none;">
+            </label>
+        </div>
+    </form>
+    <a href="/questions/ask" class="btn btn-outline-primary">Сохранить</a>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends 'inc/base.html' %}
+
+{% load static %}
+
+{% block navbar %}
+	{% include 'inc/navbar.html' %}
+{% endblock navbar %}
+
+{% block mylegend %}
+	<div class="col-md-8">
+		<h2 class="col">Тег: {{tag}}</h2>
+	</div>
+{% endblock mylegend %}
+
+{% block content %}
+	{% for question in blocks %}
+		{% include 'inc/one_question.html' %}
+	{% endfor %}
+{% endblock content %}
+
+{% block pagination %}
+    {% include 'inc/paginator.html' %}
+{% endblock pagination %}

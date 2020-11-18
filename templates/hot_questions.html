@@ -1,0 +1,27 @@
+{% extends 'inc/base.html' %}
+
+{% load static %}
+
+{% block navbar %}
+	{% include 'inc/navbar.html' %}
+{% endblock navbar %}
+
+{% block mylegend %}
+	<div class="col-5">
+		<h2>Горячие вопросы</h2>
+	</div>
+	<div class="col-5">
+		
+		<h3><a href="#">Новые вопросы</a></h3>
+	</div>
+{% endblock mylegend %}
+
+{% block content %}
+	{% for question in blocks %}
+		{% include 'inc/one_question.html' %}
+	{% endfor %}
+{% endblock content %}
+
+{% block pagination %}
+	{% include 'inc/paginator.html' %}
+{% endblock pagination %}
