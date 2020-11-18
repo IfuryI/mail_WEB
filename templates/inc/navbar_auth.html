@@ -1,34 +1,35 @@
-        <header>
-            <!-- Fixed navbar -->
-            <nav class="row border-bottom shadow-sm mb-2 p-3 justify-content-center navbar navbar-dark bg-dark">
+{% load static %}
+
+<header>
+    <nav class="row border-bottom shadow-sm mb-2 p-3 justify-content-center navbar navbar-dark bg-dark">
+        
+        <div class="col-1 mr-4">
+            <h2 class="my-0 font-weight-bold">Ask.me</h2>
+        </div>
+        <div class="col-4">
+            <form class="form-inline justify-content-center ">
+                <input class="form-control mr-sm-2 flex-fill" type="search" placeholder="Введите запрос" aria-label="Введите запрос">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+            </form>
+        </div>
+        <div class="col-2 d-flex ">
+            <a class="btn btn-outline-info flex-fill" href="#">Задать вопрос</a>
+        </div>
+        <div class="col-md-3 p-2 d-flex justify-content-center">
+            <div class="col-3 img-navbar">
                 
-                <div class="col-1 mr-4">
-                    <h2 class="my-0 font-weight-bold">Ask.me</h2>
+                <img src="{% static 'img/anon.png' %}" width="55" height="55" class="img-avatar-header flex-fill"/>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <a class="user-name" href="#">   User Name </span>
                 </div>
-                <div class="col-4">
-                    <form class="form-inline justify-content-center ">
-                        <input class="form-control mr-sm-2 flex-fill" type="search" placeholder="Введите запрос" aria-label="Введите запрос">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
-                    </form>
+                <div class="row">
+                    <a class="btn btn-link" href="#">Settings</a>
+                    
+                    <a class="btn btn-link" href="#">Log out</a>
                 </div>
-                <div class="col-2 d-flex ">
-                    <a class="btn btn-outline-info flex-fill" href="#">Задать вопрос</a>
-                </div>
-                <div class="col-md-3 p-2 d-flex justify-content-center">
-                    <div class="col-3 img-navbar">
-                        
-                        <img src="../static/img/anon.png" width="55" height="55" class="img-avatar-header flex-fill"/>
-                    </div>
-                    <div class="col">
-                        <div class="row">
-                            <span style="margin-left:10px">   User Name </span>
-                        </div>
-                        <div class="row">
-                        <a class="btn btn-link" href="#">Settings</a>
-                            
-                        <a class="btn btn-link" href="#">Log out</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
+            </div>
+        </div>
+    </nav>
+</header>

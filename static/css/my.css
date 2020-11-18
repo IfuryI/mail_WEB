@@ -30,8 +30,9 @@ code {
 	max-width: 170PX;
 }
 
-
-
+.user-name {
+    display: none;
+}
 
 .col-centered {
     float: none;
