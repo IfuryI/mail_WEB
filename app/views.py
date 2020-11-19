@@ -2,6 +2,9 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+from app.models import Profile, Question, Answer
+
+
 questions = [
     {
         'id': i,
@@ -26,13 +29,13 @@ def paginate(objects_list, request, per_page=20):
     return page
 
 def hot_questions(request):
-    one_page_questions = paginate(questions, request, 20)
+    one_page_questions = Question.objects.hot_questions() #paginate(questions, request, 20)
     return render(request, 'hot_questions.html', {
         'blocks': one_page_questions
         })
 
 def new_questions(request):
-    one_page_questions = paginate(questions, request, 20)
+    one_page_questions = Question.objects.new_questions() #paginate(questions, request, 20)
     return render(request, 'new_questions.html', {
         'blocks': one_page_questions,
         })
