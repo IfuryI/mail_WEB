@@ -13,41 +13,7 @@
 {% endblock mylegend %}
 
 {% block content %}
-    <div class="one-question row border-bottom shadow-sm mb-4">
-        <div class="col-2">
-            <div class="row">
-                <div class="col-12 pt-4 pl-4">
-                    <img src="{% static 'img/anon.png' %}" class="img-avatar"/>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 pl-3">
-                    <a class="like btn btn-outline-primary btn-sm" href="#">+</a>
-                    <span> {{ question.like_count }} </span>
-                    <a class="like btn btn-outline-primary btn-sm" href="#">-</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-8 mt-2">
-            <div class="row">
-                <div class="col">
-                    <a href="#" class="question-link">{{ question.title }}</a>
-                    <p>{{ question.text }}</p>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-6">
-                    <a href="#">answers({{ question.answer_count }})</a>
-                </div>
-                <div class="col-6">
-                    <span> Tags: </span>
-                    {% for tag in question.tags %}
-                        <a href="#" class="tags">tag</a>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
+    {% include 'inc/one_question.html' %}
 
     {% for answer in blocks %}
         {% include 'inc/answer.html' %}

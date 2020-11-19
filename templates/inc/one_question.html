@@ -18,13 +18,13 @@
 	<div class="col-8 mt-2">
 		<div class="row">
 			<div class="col">
-				<a href="#" class="question-link">{{ question.title }}</a>
+				<a href="" class="question-link">{{ question.title }}</a>
 				<p> {{ question.text }}</p>
 			</div>
 		</div>
 		<div class="row mt-4">
 			<div class="col-6">
-				<a href="#">answers({{ question.get_answers_count }})</a>
+				<a href="{% url 'question' pk=question.id %}">Ответы: {{ question.get_answers_count }}</a>
 			</div>
 			<div class="col-6">
 				<span> Tags: </span>

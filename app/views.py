@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+from django.core.exceptions import ObjectDoesNotExist
 from app.models import Profile, Question, Answer
 
 
@@ -28,43 +29,45 @@ def paginate(objects_list, request, per_page=20):
 
     return page
 
-def hot_questions(request):
-    one_page_questions = Question.objects.hot_questions() #paginate(questions, request, 20)
-    return render(request, 'hot_questions.html', {
-        'blocks': one_page_questions
-        })
-
 def new_questions(request):
-    one_page_questions = Question.objects.new_questions() #paginate(questions, request, 20)
+    questions = Question.objects.new_questions()
+    one_page_questions = paginate(questions, request, 20)
     return render(request, 'new_questions.html', {
         'blocks': one_page_questions,
         })
 
-def questions_by_tag(request, tag):
+def hot_questions(request):
+    questions = Question.objects.hot_questions()
     one_page_questions = paginate(questions, request, 20)
-    return render(request, 'questions_by_tag.html', {
-        'tag': tag,
-        'blocks': one_page_questions,
-    })
+    return render(request, 'hot_questions.html', {
+        'blocks': one_page_questions
+        })
+
+def questions_by_tag(request, tag):
+    questions = Question.objects.questions_with_tag(tag)
+
+    if (len(questions) > 0):
+        one_page_questions = paginate(questions, request, 20)
+        
+        return render(request, 'questions_by_tag.html', {
+            'tag': tag,
+            'blocks': one_page_questions,
+        })
+    else:
+        return render(request, 'blank_page.html')
 
 def question(request, pk):
-    question = questions[pk - 1]
-    answers = [
-        {
-            'id': i,
-            'title': 'Ответ ' + str(i),
-            'text': "Text text Text text Text text Text text Text text",
-            'like_count': 10,
-            'isRight': 0
-        } for i in range(80)
-    ] 
+    try:
+        question = Question.objects.get(id=pk)
+        answers = question.answers.best_answers()
+        content = paginate(answers, request, 5);
 
-    content = paginate(answers, request, 5);
-
-    return render(request, 'question.html', {
-        'question': question,
-        'blocks': content,
-        })
+        return render(request, 'question.html', {
+            'question': question,
+            'blocks': content,
+            })
+    except ObjectDoesNotExist:
+        return render(request, '404.html')
 
 def login(request):
     return render(request, 'login.html', {})

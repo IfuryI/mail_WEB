@@ -10,7 +10,7 @@ class QuestionManager(models.Manager):
     def hot_questions(self):
         return self.filter(creation_time__gte=(timezone.now() - timezone.timedelta(days=1))).order_by("-rating")
 
-    def questions_for_tag(self, tag):
+    def questions_with_tag(self, tag):
         return self.filter(tags__name=tag)
 
 
@@ -19,7 +19,7 @@ class Question(models.Model):
     creation_time = models.DateTimeField(verbose_name='Время создания')
     rating = models.IntegerField(default=0, verbose_name='Рейтинг')
     votes = models.ManyToManyField('Profile', blank=True, verbose_name='Оценки', through='QuestionVote', related_name="voted_questions", related_query_name="voted_questions")
-    tags = models.ManyToManyField('Tag', verbose_name='Теги')
+    tags = models.ManyToManyField('Tag', verbose_name='Теги', related_name='tags', related_query_name='tag')
 
     title = models.CharField(max_length=60, verbose_name='Заголовок')
     text = models.TextField(verbose_name='Текст')
@@ -33,7 +33,7 @@ class Question(models.Model):
         self.rating = QuestionVote.objects.get_rating(self.id)
         self.save()
 
-    def get_answers_count(self):  # Доделать
+    def get_answers_count(self):
         return self.answers.count()
 
     class Meta:
@@ -47,7 +47,8 @@ class AnswerManager(models.Manager):
 
 
 class Answer(models.Model):
-    to_Question = models.ForeignKey('Question', on_delete=models.CASCADE, verbose_name='К вопросу')
+    to_Question = models.ForeignKey('Question', on_delete=models.CASCADE, verbose_name='К вопросу', related_name="answers",
+                                         related_query_name="answer")
 
     author = models.ForeignKey('Profile', on_delete=models.CASCADE, verbose_name='Автор')
     creation_time = models.DateTimeField(verbose_name='Время создания')
@@ -70,6 +71,9 @@ class Answer(models.Model):
         verbose_name = 'Ответ'
         verbose_name_plural = 'Ответы'
 
+class TagManager(models.Manager):
+    def popular_tag(self):
+        pass
 
 class Tag(models.Model):
     name = models.CharField(primary_key=True, max_length=30, verbose_name='Тег')

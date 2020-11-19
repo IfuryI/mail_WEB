@@ -1,0 +1,17 @@
+{% extends 'inc/base.html' %}
+
+{% load static %}
+
+{% block navbar %}
+	{% include 'inc/navbar.html' %}
+{% endblock navbar %}
+
+{% block mylegend %}
+		<h2>404</h2>
+{% endblock mylegend %}
+
+{% block content %}
+	{% for question in blocks %}
+		{% include 'inc/one_question.html' %}
+	{% endfor %}
+{% endblock content %}
