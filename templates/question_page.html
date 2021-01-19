@@ -1,0 +1,43 @@
+{% extends 'include/base.html' %}
+
+{% load static %}
+
+{% block link-css %}
+    <link rel="stylesheet" href='{% static 'css/questions_list.css' %}'/>
+    <link rel="stylesheet" href='{% static 'css/question.css' %}'/>
+{% endblock link-css %}
+
+{% block main-content %}
+    {% include 'include/one_question.html' %}
+
+    <div class="divider py-1 bg-light my-3"></div>
+
+    {% for answer in page_obj.object_list %}
+        {% include 'include/one_answer.html' %}
+    {% endfor %}
+
+    <div class="divider py-1 bg-light my-3"></div>
+
+    {% if user.is_authenticated %}
+        <form method="post" novalidate>
+            {% csrf_token %}
+            <div class="enter-answer form-group">
+                {{ form.content }}
+                {% include 'include/form_errors.html' %}
+                <button class="btn btn-success" type="submit">Отправить ответ</button>
+            </div>
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}?next={{ request.path }}" class="btn btn-success">Войдите, чтобы оставить ответ</a>
+    {% endif %}
+
+{% endblock main-content %}
+
+{% block pagination %}
+    {% include 'include/pagination.html' %}
+{% endblock pagination %}
+
+{% block link-js %}
+    <script src="{% static 'js/likes.js' %}"></script>
+    <script src="{% static 'js/mark_correct.js' %}"></script>
+{% endblock link-js %}

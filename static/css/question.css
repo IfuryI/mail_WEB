@@ -1,0 +1,27 @@
+.answer-card {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.question-description {
+    margin-top: 15px;
+}
+
+.bottom-part {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+}
+
+#answer {
+    min-height: 200px;
+    margin-bottom: 20px;
+}
+
+.right-answer-label {
+    color: green;
+}
+
+.mark-error {
+    visibility: hidden;
+}
