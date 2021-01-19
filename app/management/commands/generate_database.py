@@ -40,22 +40,22 @@ class Command(BaseCommand):
                                      fake.password(length=fake.random_int(min=8, max=15)))
 
     def generate_profiles(self, count):
-        self.generate_users(count)
+        self.generate_users(10)
         users_ids = list(User.objects.values_list("id", flat=True))
         profile_pics = ["avatars/profile_pic.jpeg", "avatars/sample.jpeg"]
 
-        for i in range(count):
+        for i in range(10):
             Profile.objects.create(user_id=users_ids[i], nickname=fake.last_name(),
                                    profile_pic=choice(profile_pics))
 
     def generate_tags(self, count):
-        for i in range(count):
+        for i in range(5):
             Tag.objects.create(tag_name=fake.word())
 
     def generate_questions(self, count):
         profiles = list(Profile.objects.values_list("id", flat=True))
 
-        for i in range(count):
+        for i in range(10):
             question = Question.objects.create(
                 author_id=choice(profiles),
                 title=fake.sentence(nb_words=3),
@@ -75,7 +75,7 @@ class Command(BaseCommand):
         profiles = list(Profile.objects.values_list("id", flat=True))
         questions = list(Question.objects.values_list("id", flat=True))
         for question_id in questions:
-            for i in range(count):
+            for i in range(10):
                 answer = Answer.objects.create(
                     author_id=choice(profiles),
                     related_question_id=question_id,
